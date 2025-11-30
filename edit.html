@@ -1,0 +1,1169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alpha Mobiles E-Commerce App</title>
+    <link rel="stylesheet" href="edit.css">
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <!--main header-->
+    
+    <div class="header" id="main-header" style="display: none;">
+        <div class="header-left">
+            <img src="alpha-logo.jpg " alt="Alpha mobiles logo"width="100" height="100">
+            <span class="brand-name">Alpha Mobiles</span>
+        </div>
+        <nav class="navbar">
+            <!-- Navigation links use the data-page-id attribute for JS navigation -->
+            <a data-page-id="home" onclick="navigate('home')">Home Page</a>
+            <a data-page-id="categories" onclick="navigate('categories')">Categories</a>
+            <a data-page-id="topsellers" onclick="navigate('topsellers')">Top Sellers</a>
+        </nav>
+        <div class="header-icons">
+            <a data-page-id="search" onclick="navigate('search')"><i class="fas fa-search"></i></a>
+            <a data-page-id="cart" onclick="navigate('cart')"><i class="fas fa-shopping-cart"></i></a>
+            <a data-page-id="account" onclick="navigate('account')"><i class="fas fa-user"></i></a>
+        </div>
+    </div>
+    
+
+
+    
+    <!-- 1. LOGIN PAGE -->
+
+    <div class="auth-page" id="login">
+        <div class="login-container">
+             <div class="logo-placeholder"> <img src="alpha-logo-removebg-preview.png" height="120px" width="120px"></div>
+            <h1>Alpha Mobiles</h1>
+            <form id="loginForm">
+                <div class="input-group">
+                    <input type="email" id="loginEmail" placeholder="Email Address" required>
+                </div>
+                <div class="input-group password-row">
+                    <input type="password" id="loginPassword" placeholder="Password" required>
+                    <a class="forgot-password" onclick="alert('Sign up Again.');">Forgot Password?   </a>
+                </div>
+                <button type="submit" class="auth-button">Login</button>
+            </form>
+            <div class="divider">
+                <hr>
+                <span>or</span>
+                <hr>
+            </div>
+            <p>Don't have an Account? <a class="sign-up-link" onclick="navigate('signup')">Sign up</a></p>
+        </div>
+    </div>
+
+
+    
+    <!-- 2. SIGN UP PAGE -->
+ 
+    <div class="auth-page" id="signup" style="display: none;">
+        <div class="login-container"> 
+            <div class="logo-placeholder"> <img src="alpha-logo-removebg-preview.png" height="100px" width="100px"></div>
+            <h5>ALPHA MOBILES</h5>
+            <h1>Create Account</h1>
+            <form id="signupForm">
+                <div class="input-group">
+                    <input type="text" id="signupFullname" placeholder="Full Name" required>
+                </div>
+                <div class="input-group">
+                    <input type="email" id="signupEmail" placeholder="Email Address" required>
+                </div>
+                <div class="input-group">
+                    <input type="password" id="signupPassword" placeholder="Password" required>
+                </div>
+                <div class="input-group">
+                    <input type="password" id="confirmPassword" placeholder="Confirm Password" required>
+                </div>
+                <button type="submit" class="auth-button">Sign Up</button>
+            </form>
+            <div class="divider">
+                <hr>
+                <span>or</span>
+                <hr>
+            </div>
+            <p>Already have an Account? <a class="sign-up-link" onclick="navigate('login')">Login</a></p>
+        </div>
+    </div>
+
+
+  
+    <!-- 3. HOME PAGE -->
+ 
+    <div class="page" id="home">
+        <div class="content-area">
+            <section class="hero-section">
+                <div class="hero-content">
+                    <h2>Explore Premium Accessories</h2>
+                    <button class="shop-now-button" onclick="navigate('categories')">Shop Now</button>
+                </div>
+                <div class="hero-image">
+                    <div class="placeholder-image hero-image-placeholder"> <img src="s-l1200-removebg-preview.png" width="300" height="250"> </div>
+                    <p style="font-style: italic; font-size: 20px; color: #bbb; margin-top: 10px;">"Crystal-Clear Audio Experience"</p>
+                </div>
+            </section>
+
+            <section class="featured-products" style="text-align: center;">
+                <h2 style="font-size: 32px; margin-bottom: 40px; background-color: #1a1a1a; padding: 20px; border-radius: 8px;">Featured Products</h2>
+                <div class="product-grid">
+                    <div class="product-card">
+
+                        <div class="placeholder-image product-image-placeholder"> <img src="emergency-removebg-preview.png" alt="ear buds pro" width="180" height="125"> </div>
+                        <h3>Pro Wireless Earbuds</h3>
+                        <p>$129.99</p>
+                        <button class="auth-button" style="padding: 10px; font-size: 16px; margin-top: 10px;" onclick="addToCart('Pro Wireless Earbuds', 129.99)">Add to Cart</button>
+                    </div>
+
+                    <div class="product-card">
+                        <div class="placeholder-image product-image-placeholder"> <img src="Samsung-Galaxy-S25-Ultra-removebg-preview.png" width="200" height="125"></div>
+                        <h3>Samsung S25 Ultra</h3>
+                        <p>$1499.00</p>
+                        <button class="auth-button" style="padding: 10px; font-size: 16px; margin-top: 10px;" onclick="addToCart('Samsung S25 Ultra', 1499.00)">Add to Cart</button>
+                    </div>
+                    
+                    <div class="product-card">
+                        <div class="placeholder-image product-image-placeholder"> <img src="51iFHz3h6-L._UF1000_1000_QL80_-removebg-preview.png" width="200" height="125"></div>
+                        <h3>Smartwatch X20</h3>
+                        <p>$99.99</p>
+                        <button class="auth-button" style="padding: 10px; font-size: 16px; margin-top: 10px;" onclick="addToCart('Smartwatch X20', 99.99)">Add to Cart</button>
+                    </div>
+                    <div class="product-card">
+                        <div class="placeholder-image product-image-placeholder"> <img src="Samsung-Galaxy-S24-Ultra-removebg-preview.png" width="200" height="125"> </div>
+                        <h3>Samsung S24 Ultra</h3>
+                        <p>$1659.99</p>
+                        <button class="auth-button" style="padding: 10px; font-size: 16px; margin-top: 10px;" onclick="addToCart('Samsung S24 Ultra', 1659.99)">Add to Cart</button>
+                    </div>
+                    <div class="product-card">
+                        <div class="placeholder-image product-image-placeholder"> <img src="iphone-17prooo.png" width="200" height="125"></div>
+                        <h3>iPhone 17 Pro</h3>
+                        <p>$1199.99</p>
+                        <button class="auth-button" style="padding: 10px; font-size: 16px; margin-top: 10px;" onclick="addToCart('iPhone 17 Pro', 1199.99)">Add to Cart</button>
+                    </div>
+                    <div class="product-card">
+                        <div class="placeholder-image product-image-placeholder"> <img src="appleminihomebg.png" width="200" height="125"></div>
+                        <h3>Apple HomePod mini</h3>
+                        <p>$99.00</p>
+                        <button class="auth-button" style="padding: 10px; font-size: 16px; margin-top: 10px;" onclick="addToCart('Apple HomePod mini', 99.99)">Add to Cart</button>
+                    </div>
+                    <div class="product-card">
+                        <div class="placeholder-image product-image-placeholder"> <img src="MUW43-removebg-preview.png" width="200" height="125"></div>
+                        <h3>Apple Beats Solo 4 — On-Ear Wireless</h3>
+                        <p>$199.99</p>
+                        <button class="auth-button" style="padding: 10px; font-size: 16px; margin-top: 10px;" onclick="addToCart('Apple Beats Solo 4 — On-Ear Wireless', 199.99)">Add to Cart</button>
+                    </div>
+                    <div class="product-card">
+                        <div class="placeholder-image product-image-placeholder"> <img src="Huawei-FreeBuds-7i-removebg-preview.png" width="200" height="125"></div>
+                        <h3>HUAWEI FreeBuds 7i</h3>
+                        <p>$74.99</p>
+                        <button class="auth-button" style="padding: 10px; font-size: 16px; margin-top: 10px;" onclick="addToCart('HUAWEI FreeBuds 7i', 74.99)">Add to Cart</button>
+                    </div>
+                    <div class="product-card">
+                        <div class="placeholder-image product-image-placeholder"> <img src="Samsung-wireless-charger-removebg-preview.png" width="200" height="125"></div>
+                        <h3>SAMSUNG Single Wireless Charger</h3>
+                        <p>$34.99</p>
+                        <button class="auth-button" style="padding: 10px; font-size: 16px; margin-top: 10px;" onclick="addToCart('SAMSUNG Single Wireless Charger', 34.99)">Add to Cart</button>
+                    </div>
+                    <div class="product-card">
+                        <div class="placeholder-image product-image-placeholder"> <img src="galaxy-book360-removebg-preview.png" width="200" height="125"></div>
+                        <h3>Galaxy Book5 Pro 360</h3>
+                        <p>$1999.99</p>
+                        <button class="auth-button" style="padding: 10px; font-size: 16px; margin-top: 10px;" onclick="addToCart('Galaxy Book5 Pro 360', 1999.99)">Add to Cart</button>
+                    </div>
+                    <div class="product-card">
+                        <div class="placeholder-image product-image-placeholder"> <img src="Galaxy-watch-ultra-orange-removebg-preview.png" width="200" height="125"></div>
+                        <h3>Galaxy Watch Ultra</h3>
+                        <p>$249.99</p>
+                        <button class="auth-button" style="padding: 10px; font-size: 16px; margin-top: 10px;" onclick="addToCart('Galaxy Watch Ultra', 249.99)">Add to Cart</button>
+                    </div>
+                    <div class="product-card">
+                        <div class="placeholder-image product-image-placeholder"> <img src="jbl-headset-removebg-preview.png" width="200" height="125"></div>
+                        <h3>JBL Tune 670 Noise Cancelling Headphones</h3>
+                        <p>$54.99</p>
+                        <button class="auth-button" style="padding: 10px; font-size: 16px; margin-top: 10px;" onclick="addToCart('JBL Tune 670 Noise Cancelling Headphones', 54.99)">Add to Cart</button>
+                    </div>
+                    <div class="product-card">
+                        <div class="placeholder-image product-image-placeholder"> <img src="a561-removebg-preview.png" width="180" height="100"></div>
+                        <h3>Samsung Galaxy A56</h3>
+                        <p>$499.99</p>
+                        <button class="auth-button" style="padding: 10px; font-size: 16px; margin-top: 10px;" onclick="addToCart('Samsung Galaxy A56', 499.99)">Add to Cart</button>
+                    </div>
+                    
+                </div>
+            </section>
+        </div>
+    </div>
+
+
+   
+    <!-- 4. CATEGORIES PAGE (Show Collection Page functionality is integrated) -->
+
+    <div class="page" id="categories">
+        <div class="content-area">
+            <h1 style="font-size: 40px; margin-bottom: 40px; background-color: #1a1a1a; padding: 20px; border-radius: 8px; text-align: center;"> Product Categories</h1>
+            <section class="explore-collection" style="padding: 40px 0; text-align: center;justify-content: center; display: flex;">
+                <section class="category-hero" style="justify-content: space-around; padding-right:90px ;">
+               
+                   <span class="placeholder-image hero-image-placeholder"> <img src="black-headset-removebg-preview.png" width="280" height="240"></span>
+                   <div class="hero-content">
+                      <h2 style="text-align: center; margin-bottom: 20px;">Unleash The Music</h2>
+                      <button class="shop-now-button" onclick="navigate('collection1')">Shop Audio</button>
+                    </div>
+                </section>
+                <br>
+            
+
+                <section class="category-hero" style="justify-content: space-around;">
+                    <span class="placeholder-image hero-image-placeholder"> <img src="casing1-removebg-preview.png" width="280" height="240"></span>
+                    <div class="hero-content" style="text-align: right;">
+                        <h2 style="text-align:center; margin-bottom: 20px;">Unbeatable Protection</h2>
+                        <button  class="shop-now-button" onclick="navigate('collection2')">Explore Cases</button>
+                    </div>
+                </section>
+            </section>
+
+            <section class="explore-collection" style="padding: 40px 0; text-align: center;">
+                <h2 style="font-size: 32px; margin-bottom: 40px; background-color: #1a1a1a; padding: 20px; border-radius: 8px;">More Collections</h2>
+                <div class="product-grid">
+                    <div class="product-card">
+                        <span class="placeholder-image product-image-placeholder"> <img src="wireless_apple_holder_22.5W-removebg-preview.png" width="150" height="150"></span>
+                        <h3>Wireless Charger 5.0</h3>
+                        <button class="auth-button" style="padding: 10px; font-size: 16px; margin-top: 10px;" onclick="navigate('collection3')">View Collection</button>
+                    </div>
+                    <div class="product-card">
+                        <span class="placeholder-image product-image-placeholder"> <img src="51iFHz3h6-L._UF1000_1000_QL80_-removebg-preview.png" width="150" height="150"> </span>
+                        <h3>Premium Watches</h3>
+                        <button class="auth-button" style="padding: 10px; font-size: 16px; margin-top: 10px;" onclick="navigate('collection4')">View Collection</button>
+                    </div>
+                    <div class="product-card">
+                        <span class="placeholder-image product-image-placeholder"> <img src="Samsung-Galaxy-S25-Ultra-removebg-preview.png" width="150" height="150"> </span>
+                        <h3> Phones</h3>
+                        <button class="auth-button" style="padding: 10px; font-size: 16px; margin-top: 10px;" onclick="navigate('collection5')">View Collection</button>
+                    </div>
+                    <div class="product-card">
+                        <span class="placeholder-image product-image-placeholder"> <img src="galaxy-book360-removebg-preview.png" width="150" height="150"> </span>
+                        <h3>Other Accessories</h3>
+                        <button class="auth-button" style="padding: 10px; font-size: 16px; margin-top: 10px;" onclick="navigate('collection6')">View Collection</button>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+
+    <!-- 4. SHOW COLLECTION PAGE  -->
+    <div class="page" id="collection1">
+        <div class="content-area" style="text-align: center;">
+            <h1 style="font-size: 40px; margin-bottom: 40px; color: #9333ea;">Audio Collections</h1>
+            <p style="margin-bottom: 40px;">"Where luxury meets pure acoustic perfection."</p>
+            <div class="product-grid">
+                <div class="product-card">
+                    <span class="placeholder-image product-image-placeholder"><img src="black-headset-removebg-preview.png" width="150" height="150"></span>
+                    <h3>Samsung JBL live 660</h3>
+                    <p>$174.95</p>
+                    <button class="auth-button" style="padding: 10px; font-size: 16px; margin-top: 10px;" onclick="addToCart('Samsung JBL live 660', 174.95)">Add to Cart</button>
+                </div>
+                 <div class="product-card">
+                    <span class="placeholder-image product-image-placeholder"><img src="s-l1200-removebg-preview.png" width="150" height="150"> </span>
+                    <h3>Xiaomi Headset 7000x</h3>
+                    <p>$129.99</p>
+                    <button class="auth-button" style="padding: 10px; font-size: 16px; margin-top: 10px;" onclick="addToCart('Xiaomi Headset 7000x', 129.99)">Add to Cart</button>
+                </div>
+                <div class="product-card">
+                    <span class="placeholder-image product-image-placeholder"><img src="huawei-earpods-removebg-preview.png" width="150" height="150"> </span>
+                    <h3>Huawei FreeBuds 7i</h3>
+                    <p>$99.99</p>
+                    <button class="auth-button" style="padding: 10px; font-size: 16px; margin-top: 10px;" onclick="addToCart('Huawei FreeBuds 7i', 99.99)">Add to Cart</button>
+                </div>
+                <div class="product-card">
+                    <span class="placeholder-image product-image-placeholder"><img src="samsungspeaker-removebg-preview.png" width="150" height="150">  </span>
+                    <h3>Dolby Atmos Wireless Rear Speaker </h3>
+                    <p>$299.99</p>
+                    <button class="auth-button" style="padding: 10px; font-size: 16px; margin-top: 10px;" onclick="addToCart('Dolby Atmos Wireless Rear Speaker ', 299.99)">Add to Cart</button>
+                </div>
+                
+                <div class="product-card">
+                    <span class="placeholder-image product-image-placeholder"><img src="emergency-removebg-preview.png" width="150" height="150"> </span>
+                    <h3>Apple Smart pro 3</h3>
+                    <p>$79.99</p>
+                    <button class="auth-button" style="padding: 10px; font-size: 16px; margin-top: 10px;" onclick="addToCart('Apple Smart pro 3', 79.99)">Add to Cart</button>
+                </div>
+                <div class="product-card">
+                    <span class="placeholder-image product-image-placeholder"><img src="appleminihomebg.png" width="150" height="150"> </span>
+                    <h3>Apple HomePod mini</h3>
+                    <p>$99.99</p>
+                    <button class="auth-button" style="padding: 10px; font-size: 16px; margin-top: 10px;" onclick="addToCart('Apple HomePod mini', 99.99)">Add to Cart</button>
+                </div>
+                <div class="product-card">
+                    <span class="placeholder-image product-image-placeholder"><img src="sony-speaker-removebg-preview.png" width="150" height="150"> </span>
+                    <h3>Sony XV500 X-Series Speaker</h3>
+                    <p>$249.99</p>
+                    <button class="auth-button" style="padding: 10px; font-size: 16px; margin-top: 10px;" onclick="addToCart('Sony XV500 X-Series Speaker', 249.99)">Add to Cart</button>
+                </div>
+                 <div class="product-card">
+                    <span class="placeholder-image product-image-placeholder"><img src="s-l1200-removebg-preview.png" width="150" height="150"> </span>
+                    <h3>Xiaomi Headset 7000x</h3>
+                    <p>$129.99</p>
+                    <button class="auth-button" style="padding: 10px; font-size: 16px; margin-top: 10px;" onclick="addToCart('Xiaomi Headset 7000x', 129.99)">Add to Cart</button>
+                </div>
+                <div class="product-card">
+                    <span class="placeholder-image product-image-placeholder"><img src="sony-neck-removebg-preview.png" width="150" height="150"> </span>
+                    <h3>BRAVIA Theatre U | Wireless Neckband Speaker</h3>
+                    <p>$499.99</p>
+                    <button class="auth-button" style="padding: 10px; font-size: 16px; margin-top: 10px;" onclick="addToCart('BRAVIA Theatre U | Wireless Neckband Speaker', 499.99)">Add to Cart</button>
+                </div>
+            </div>
+            <button class="shop-now-button" style="margin-top: 40px;" onclick="navigate('categories')">Back to Categories</button>
+        </div>
+    </div>
+
+    <!--for cases collection--> 
+    <div class="page" id="collection2">
+        <div class="content-area" style="text-align: center;">
+            <h1 style="font-size: 40px; margin-bottom: 40px; color: #9333ea;">Cases Collections</h1>
+            <p style="margin-bottom: 40px;">“A case that feels as premium as your phone.”</p>
+            <div class="product-grid">
+                <div class="product-card">
+                    <span class="placeholder-image product-image-placeholder"><img src="case1-removebg-preview.png" width="150" height="150"></span>
+                    <h3>EliteShield Cases | Spider Eyes</h3>
+                    <p>$17.95</p>
+                    <button class="auth-button" style="padding: 10px; font-size: 16px; margin-top: 10px;" onclick="addToCart('EliteShield Cases | Spider Eyes', 17.95)">Add to Cart</button>
+                </div>
+                 <div class="product-card">
+                    <span class="placeholder-image product-image-placeholder"><img src="case2-removebg-preview.png" width="150" height="150"> </span>
+                    <h3>VelvetArmor Cases | Premium Spider Logo</h3>
+                    <p>$17.99</p>
+                    <button class="auth-button" style="padding: 10px; font-size: 16px; margin-top: 10px;" onclick="addToCart('VelvetArmor Cases | Premium spider Logo', 17.99)">Add to Cart</button>
+                </div>
+                <div class="product-card">
+                    <span class="placeholder-image product-image-placeholder"><img src="case3-removebg-preview.png" width="150" height="150"> </span>
+                    <h3>ArmorCase | Flower case</h3>
+                    <p>$29.99</p>
+                    <button class="auth-button" style="padding: 10px; font-size: 16px; margin-top: 10px;" onclick="addToCart('ArmorCase | Flower case', 29.99)">Add to Cart</button>
+                </div>
+                <div class="product-card">
+                    <span class="placeholder-image product-image-placeholder"><img src="case4-removebg-preview.png" width="150" height="150">  </span>
+                    <h3>EliteShield Cases | Aesthetic white Blossom</h3>
+                    <p>$29.99</p>
+                    <button class="auth-button" style="padding: 10px; font-size: 16px; margin-top: 10px;" onclick="addToCart('EliteShield Cases | Aesthetic white Blossom ', 29.99)">Add to Cart</button>
+                </div>
+                
+                <div class="product-card">
+                    <span class="placeholder-image product-image-placeholder"><img src="case5-removebg-preview.png" width="150" height="150"> </span>
+                    <h3>SnapGuard | Black Roses collection</h3>
+                    <p>$19.99</p>
+                    <button class="auth-button" style="padding: 10px; font-size: 16px; margin-top: 10px;" onclick="addToCart('SnapGuard | Black Roses collection', 19.99)">Add to Cart</button>
+                </div>
+                
+                <div class="product-card">
+                    <span class="placeholder-image product-image-placeholder"><img src="case6-removebg-preview.png" width="150" height="150"> </span>
+                    <h3>Armour Guard | Pink Tulip Floweret</h3>
+                    <p>$25.99</p>
+                    <button class="auth-button" style="padding: 10px; font-size: 16px; margin-top: 10px;" onclick="addToCart('Armour Guard | Pink Tulip Floweret', 25.99)">Add to Cart</button>
+                </div>
+                 <div class="product-card">
+                    <span class="placeholder-image product-image-placeholder"><img src="case8-removebg-preview.png" width="150" height="150"></span>
+                    <h3>VelvetArmor Cases | Special Pakistani Culutral & Traditional Pattern </h3>
+                    <p>$35.95</p>
+                    <button class="auth-button" style="padding: 10px; font-size: 16px; margin-top: 10px;" onclick="addToCart('VelvetArmor Cases | Special Pakistani Culutral & Traditional Pattern', 35.95)">Add to Cart</button>
+                </div>
+                 <div class="product-card">
+                    <span class="placeholder-image product-image-placeholder"><img src="case9-removebg-preview.png" width="150" height="150"> </span>
+                    <h3>Baloch Traditional Cases | Hand-swen pattern Case</h3>
+                    <p>$40.99</p>
+                    <button class="auth-button" style="padding: 10px; font-size: 16px; margin-top: 10px;" onclick="addToCart('Baloch Traditional Cases | Hand-swen pattern Case', 40.99)">Add to Cart</button>
+                </div>
+                <div class="product-card">
+                    <span class="placeholder-image product-image-placeholder"><img src="case10-removebg-preview.png" width="150" height="150"> </span>
+                    <h3>SassyShells | Special Cute Panda Edition </h3>
+                    <p>$29.99</p>
+                    <button class="auth-button" style="padding: 10px; font-size: 16px; margin-top: 10px;" onclick="addToCart('SassyShells | Special Cute Panda Edition', 29.99)">Add to Cart</button>
+                </div>
+                <div class="product-card">
+                    <span class="placeholder-image product-image-placeholder"><img src="case11-removebg-preview.png" width="150" height="150">  </span>
+                    <h3>SnapGuard | Special Halloween Edition case </h3>
+                    <p>$29.99</p>
+                    <button class="auth-button" style="padding: 10px; font-size: 16px; margin-top: 10px;" onclick="addToCart('SnapGuard | Special Halloween Edition case', 29.99)">Add to Cart</button>
+                </div>
+                
+                <div class="product-card">
+                    <span class="placeholder-image product-image-placeholder"><img src="case7.webp" width="150" height="150"> </span>
+                    <h3>VelvetArmor Cases | Special Autumn Edition</h3>
+                    <p>$19.99</p>
+                    <button class="auth-button" style="padding: 10px; font-size: 16px; margin-top: 10px;" onclick="addToCart('VelvetArmor Cases | Special Autumn Edition', 19.99)">Add to Cart</button>
+                </div>
+                
+                
+
+            </div>
+            <button class="shop-now-button" style="margin-top: 40px;" onclick="navigate('categories')">Back to Categories</button>
+        </div>
+    </div>
+    <!--for charger collection-->
+    <div class="page" id="collection3">
+        <div class="content-area" style="text-align: center;">
+            <h1 style="font-size: 40px; margin-bottom: 40px; color: #9333ea;">Wireless Charger Collection</h1>
+            <p style="margin-bottom: 40px;">“Effortless energy for your everyday.</p>
+            <div class="product-grid">
+                <div class="product-card">
+                    <span class="placeholder-image product-image-placeholder"><img src="wireless-anker-superfast-removebg-preview.png" width="150" height="150"></span>
+                    <h3>Anker X-2000p turbo Xseries </h3>
+                    <p>$100.95</p>
+                    <button class="auth-button" style="padding: 10px; font-size: 16px; margin-top: 10px;" onclick="addToCart('Anker X-2000p turbo Xseries ', 100.95)">Add to Cart</button>
+                </div>
+                 <div class="product-card">
+                    <span class="placeholder-image product-image-placeholder"><img src="xiaomi-acefast-turbo-2000-removebg-preview.png" width="150" height="150"> </span>
+                    <h3>Xiaomi Wireless Acefast Turbo </h3>
+                    <p>$129.99</p>
+                    <button class="auth-button" style="padding: 10px; font-size: 16px; margin-top: 10px;" onclick="addToCart('Xiaomi Wireless Acefast Turbo ', 129.99)">Add to Cart</button>
+                </div>
+                <div class="product-card">
+                    <span class="placeholder-image product-image-placeholder"><img src="wireless-huwaeii-fast-removebg-preview.png" width="150" height="150"> </span>
+                    <h3>Huawei Wireless SuperFast Charger</h3>
+                    <p>$99.99</p>
+                    <button class="auth-button" style="padding: 10px; font-size: 16px; margin-top: 10px;" onclick="addToCart('Huawei Wireless SuperFast Charger', 99.99)">Add to Cart</button>
+                </div>
+                <div class="product-card">
+                    <span class="placeholder-image product-image-placeholder"><img src="wireless_apple_holder_22.5W-removebg-preview.png" width="150" height="150">  </span>
+                    <h3>Apple Premium Wireless Holder 22.5W</h3>
+                    <p>$149.99</p>
+                    <button class="auth-button" style="padding: 10px; font-size: 16px; margin-top: 10px;" onclick="addToCart('Apple Premium Wireless Holder 22.5W ', 149.99)">Add to Cart</button>
+                </div>
+                
+                <div class="product-card">
+                    <span class="placeholder-image product-image-placeholder"><img src="apple-bankkk-removebg-preview.png" width="150" height="150"> </span>
+                    <h3>Belkin UltraCharge Pro 3-in-1 Magnetic Charging Dock</h3>
+                    <p>$149.99</p>
+                    <button class="auth-button" style="padding: 10px; font-size: 16px; margin-top: 10px;" onclick="addToCart('Belkin UltraCharge Pro 3-in-1 Magnetic Charging Dock', 149.99)">Add to Cart</button>
+                </div>
+                <div class="product-card">
+                    <span class="placeholder-image product-image-placeholder"><img src="apple-battery-removebg-preview.png" width="150" height="150"> </span>
+                    <h3>iPhone Air MagSafe Battery</h3>
+                    <p>$99.99</p>
+                    <button class="auth-button" style="padding: 10px; font-size: 16px; margin-top: 10px;" onclick="addToCart('iPhone Air MagSafe Battery', 99.99)">Add to Cart</button>
+                </div>
+                <div class="product-card">
+                    <span class="placeholder-image product-image-placeholder"><img src="apple-img-removebg-preview.png" width="150" height="150"> </span>
+                    <h3>MagSafe Charger (2 m)</h3>
+                    <p>$49.99</p>
+                    <button class="auth-button" style="padding: 10px; font-size: 16px; margin-top: 10px;" onclick="addToCart('MagSafe Charger (2 m)', 49.99)">Add to Cart</button>
+                </div>
+                <div class="product-card">
+                    <span class="placeholder-image product-image-placeholder"><img src="apple-power-removebg-preview.png" width="150" height="150"> </span>
+                    <h3>Anker MagGo Power Bank (5K, Slim)</h3>
+                    <p>$45.99</p>
+                    <button class="auth-button" style="padding: 10px; font-size: 16px; margin-top: 10px;" onclick="addToCart('Anker MagGo Power Bank (5K, Slim)', 45.99)">Add to Cart</button>
+                </div>
+            </div>
+            <button class="shop-now-button" style="margin-top: 40px;" onclick="navigate('categories')">Back to Categories</button>
+        </div>
+    </div>
+    
+
+    <!--for watches collection-->
+
+    <div class="page" id="collection4">
+        <div class="content-area" style="text-align: center;">
+            <h1 style="font-size: 40px; margin-bottom: 40px; color: #9333ea;">Watches Collections</h1>
+            <p style="margin-bottom: 40px;">“Luxury you can wear on your wrist.”</p>
+            <div class="product-grid">
+                <div class="product-card">
+                    <span class="placeholder-image product-image-placeholder"><img src="apple-seies11-removebg-preview.png" width="150" height="150"></span>
+                    <h3>Apple Watch Series 11</h3>
+                    <p>$399.95</p>
+                    <button class="auth-button" style="padding: 10px; font-size: 16px; margin-top: 10px;" onclick="addToCart('Apple Watch Series 11', 399.95)">Add to Cart</button>
+                </div>
+                 <div class="product-card">
+                    <span class="placeholder-image product-image-placeholder"><img src="galaxy1-removebg-preview.png" width="180" height="180"> </span>
+                    <h3>Galaxy Watch Ultra</h3>
+                    <p>$549.99</p>
+                    <button class="auth-button" style="padding: 10px; font-size: 16px; margin-top: 10px;" onclick="addToCart('Galaxy Watch Ultra', 549.99)">Add to Cart</button>
+                </div>
+                <div class="product-card">
+                    <span class="placeholder-image product-image-placeholder"><img src="tag-heuer1-removebg-preview.png" width="150" height="150"> </span>
+                    <h3>TAG Heuer Connected Calibre E5</h3>
+                    <p>$1299.99</p>
+                    <button class="auth-button" style="padding: 10px; font-size: 16px; margin-top: 10px;" onclick="addToCart('TAG Heuer Connected Calibre E5', 1299.99)">Add to Cart</button>
+                </div>
+                <div class="product-card">
+                    <span class="placeholder-image product-image-placeholder"><img src="apple-hermes-removebg-preview.png" width="150" height="150">  </span>
+                    <h3>Apple Watch Hermès Ultra 3</h3>
+                    <p>$999.99</p>
+                    <button class="auth-button" style="padding: 10px; font-size: 16px; margin-top: 10px;" onclick="addToCart('Apple Watch Hermès Ultra 3 ', 999.99)">Add to Cart</button>
+                </div>
+                
+                <div class="product-card">
+                    <span class="placeholder-image product-image-placeholder"><img src="galaxy2-removebg-preview.png" width="180" height="180"> </span>
+                    <h3>Galaxy Watch8 Classic</h3>
+                    <p>$499.99</p>
+                    <button class="auth-button" style="padding: 10px; font-size: 16px; margin-top: 10px;" onclick="addToCart('Galaxy Watch8 Classic', 499.99)">Add to Cart</button>
+                </div>
+                <div class="product-card">
+                    <span class="placeholder-image product-image-placeholder"><img src="tag-heuer-formula1-removebg-preview.png" width="150" height="150"> </span>
+                    <h3>TAG Heuer Formula 1 Chronograph</h3>
+                    <p>$1599.99</p>
+                    <button class="auth-button" style="padding: 10px; font-size: 16px; margin-top: 10px;" onclick="addToCart('TAG Heuer Formula 1 Chronograph', 1599.99)">Add to Cart</button>
+                </div>
+                <div class="product-card">
+                    <span class="placeholder-image product-image-placeholder"><img src="amazon-watch-removebg-preview.png" width="150" height="150"> </span>
+                    <h3>Amazfit Bip 6 Smart Watch </h3>
+                    <p>$100.49</p>
+                    <button class="auth-button" style="padding: 10px; font-size: 16px; margin-top: 10px;" onclick="addToCart('Amazfit Bip 6 Smart Watch', 100.49)">Add to Cart</button>
+                </div>
+                 <div class="product-card">
+                    <span class="placeholder-image product-image-placeholder"><img src="apple-se3-removebg-preview.png" width="180" height="180"> </span>
+                    <h3>Apple Watch SE 3</h3>
+                    <p>$249.99</p>
+                    <button class="auth-button" style="padding: 10px; font-size: 16px; margin-top: 10px;" onclick="addToCart('Apple Watch SE 3', 249.99)">Add to Cart</button>
+                </div>
+               
+            </div>
+            <button class="shop-now-button" style="margin-top: 40px;" onclick="navigate('categories')">Back to Categories</button>
+        </div>
+    </div>
+<!--for phones collection-->
+<div class="page" id="collection5">
+        <div class="content-area" style="text-align: center;">
+            <h1 style="font-size: 40px; margin-bottom: 40px; color: #9333ea;">Mobile Phones Collection</h1>
+            <p style="margin-bottom: 40px;">“Power, performance, and perfection in your palm.”</p>
+            <div class="product-grid">
+                <div class="product-card">
+                    <span class="placeholder-image product-image-placeholder"><img src="Samsung-Galaxy-S25-Ultra-removebg-preview.png" width="150" height="150"></span>
+                    <h3>Samsung Galaxy S25 Ultra </h3>
+                    <p>$1499.99</p>
+                    <button class="auth-button" style="padding: 10px; font-size: 16px; margin-top: 10px;" onclick="addToCart('Samsung Galaxy S25 Ultra ', 1499.99)">Add to Cart</button>
+                </div>
+                 <div class="product-card">
+                    <span class="placeholder-image product-image-placeholder"><img src="Samsung-Galaxy-S24-Ultra-removebg-preview.png" width="150" height="150"> </span>
+                    <h3>Samsung Galaxy S24 Ultra </h3>
+                    <p>$1659.99</p>
+                    <button class="auth-button" style="padding: 10px; font-size: 16px; margin-top: 10px;" onclick="addToCart('Samsung Galaxy S24 Ultra ', 1659.99)">Add to Cart</button>
+                </div>
+                <div class="product-card">
+                    <span class="placeholder-image product-image-placeholder"><img src="a561-removebg-preview.png" width="150" height="150"> </span>
+                    <h3>Samsung Galaxy A56</h3>
+                    <p>$499.99</p>
+                    <button class="auth-button" style="padding: 10px; font-size: 16px; margin-top: 10px;" onclick="addToCart('Samsung Galaxy A56', 499.99)">Add to Cart</button>
+                </div>
+                <div class="product-card">
+                    <span class="placeholder-image product-image-placeholder"><img src="fold2-removebg-preview.png" width="150" height="150">  </span>
+                    <h3>Galaxy Z Fold7</h3>
+                    <p>$2099.99</p>
+                    <button class="auth-button" style="padding: 10px; font-size: 16px; margin-top: 10px;" onclick="addToCart('Galaxy Z Fold7 ', 2099.99)">Add to Cart</button>
+                </div>
+                
+                <div class="product-card">
+                    <span class="placeholder-image product-image-placeholder"><img src="flip4-removebg-preview.png" width="150" height="150"> </span>
+                    <h3>Galaxy Z Flip7</h3>
+                    <p>$1099.99</p>
+                    <button class="auth-button" style="padding: 10px; font-size: 16px; margin-top: 10px;" onclick="addToCart('Galaxy Z Flip7', 1099.99)">Add to Cart</button>
+                </div>
+                <div class="product-card">
+                    <span class="placeholder-image product-image-placeholder"><img src="s22-ultra-removebg-preview.png" width="150" height="150"> </span>
+                    <h3>Galaxy S22 Ultra 128GB</h3>
+                    <p>$599.99</p>
+                    <button class="auth-button" style="padding: 10px; font-size: 16px; margin-top: 10px;" onclick="addToCart('Galaxy S22 Ultra 128GB', 599.99)">Add to Cart</button>
+                </div>
+                <div class="product-card">
+                    <span class="placeholder-image product-image-placeholder"><img src="iphone-17prooo.png" width="150" height="150"> </span>
+                    <h3>iPhone 17 Pro</h3>
+                    <p>$1099.99</p>
+                    <button class="auth-button" style="padding: 10px; font-size: 16px; margin-top: 10px;" onclick="addToCart('iPhone 17 Pro', 1099.99)">Add to Cart</button>
+                </div>
+                 <div class="product-card">
+                    <span class="placeholder-image product-image-placeholder"><img src="iphone-16-new2-removebg-preview.png" width="150" height="150"> </span>
+                    <h3>iPhone 16 pro</h3>
+                    <p>$999.99</p>
+                    <button class="auth-button" style="padding: 10px; font-size: 16px; margin-top: 10px;" onclick="addToCart('iPhone 16 pro', 999.99)">Add to Cart</button>
+                </div>
+                <div class="product-card">
+                    <span class="placeholder-image product-image-placeholder"><img src="iphoneairrr-removebg-preview.png" width="150" height="150"> </span>
+                    <h3>iPhone Air</h3>
+                    <p>$1499.99</p>
+                    <button class="auth-button" style="padding: 10px; font-size: 16px; margin-top: 10px;" onclick="addToCart('iPhone Air', 1499.99)">Add to Cart</button>
+                </div>
+
+                 <div class="product-card">
+                    <span class="placeholder-image product-image-placeholder"><img src="infinixnote50-removebg-preview.png" width="150" height="150"> </span>
+                    <h3>Infinix NOTE 50</h3>
+                    <p>$499.99</p>
+                    <button class="auth-button" style="padding: 10px; font-size: 16px; margin-top: 10px;" onclick="addToCart('Infinix NOTE 50', 499.99)">Add to Cart</button>
+                </div>
+                 <div class="product-card">
+                    <span class="placeholder-image product-image-placeholder"><img src="infinx-Note-40-Pro5gRacing-Edttion-removebg-preview.png" width="150" height="150"> </span>
+                    <h3> Infinix NOTE 40 Pro+ 5G RACING EDITION</h3>
+                    <p>$699.99</p>
+                    <button class="auth-button" style="padding: 10px; font-size: 16px; margin-top: 10px;" onclick="addToCart('Infinix NOTE 40 Pro+ 5G RACING EDITION', 699.99)">Add to Cart</button>
+                </div>
+                 <div class="product-card">
+                    <span class="placeholder-image product-image-placeholder"><img src="infinixgt30proooooooooooo.png" width="150" height="150"> </span>
+                    <h3>Infinix GT 30 Pro</h3>
+                    <p>$649.99</p>
+                    <button class="auth-button" style="padding: 10px; font-size: 16px; margin-top: 10px;" onclick="addToCart('Infinix GT 30 Pro', 649.99)">Add to Cart</button>
+                </div>
+                 <div class="product-card">
+                    <span class="placeholder-image product-image-placeholder"><img src="infinixzero30-removebg-preview.png" width="150" height="150"> </span>
+                    <h3>Infinix ZERO 30</h3>
+                    <p>$449.99</p>
+                    <button class="auth-button" style="padding: 10px; font-size: 16px; margin-top: 10px;" onclick="addToCart('Infinix ZERO 30', 449.99)">Add to Cart</button>
+                </div>
+                 <div class="product-card">
+                    <span class="placeholder-image product-image-placeholder"><img src="pocof7-removebg-preview.png" width="150" height="150"> </span>
+                    <h3>Xiomi Poco F7</h3>
+                    <p>$529.99</p>
+                    <button class="auth-button" style="padding: 10px; font-size: 16px; margin-top: 10px;" onclick="addToCart('Xiomi Poco F7', 529.99)">Add to Cart</button>
+                </div>
+                 <div class="product-card">
+                    <span class="placeholder-image product-image-placeholder"><img src="techno-removebg-preview.png" width="150" height="150"> </span>
+                    <h3>Techno PHANTOM V Fold2 5G</h3>
+                    <p>$1099.99</p>
+                    <button class="auth-button" style="padding: 10px; font-size: 16px; margin-top: 10px;" onclick="addToCart('Techno PHANTOM V Fold2 5G', 1099.99)">Add to Cart</button>
+                </div>
+                 <div class="product-card">
+                    <span class="placeholder-image product-image-placeholder"><img src="xiomi15t-removebg-preview.png" width="150" height="150"> </span>
+                    <h3>Xiaomi 15T</h3>
+                    <p>$599.99</p>
+                    <button class="auth-button" style="padding: 10px; font-size: 16px; margin-top: 10px;" onclick="addToCart('Xiaomi 15T', 599.99)">Add to Cart</button>
+                </div>
+                 
+            </div>
+            <button class="shop-now-button" style="margin-top: 40px;" onclick="navigate('categories')">Back to Categories</button>
+        </div>
+    </div>
+    <!--others-->
+
+    <div class="page" id="collection6">
+        <div class="content-area" style="text-align: center;">
+            <h1 style="font-size: 40px; margin-bottom: 40px; color: #9333ea;">Wireless Charger Collection</h1>
+            <p style="margin-bottom: 40px;">“Effortless energy for your everyday.</p>
+            <div class="product-grid">
+                <div class="product-card">
+                    <span class="placeholder-image product-image-placeholder"><img src="ipadpro-removebg-preview.png " width="150" height="150"></span>
+                    <h3>iPad Pro </h3>
+                    <p>$100.95</p>
+                    <button class="auth-button" style="padding: 10px; font-size: 16px; margin-top: 10px;" onclick="addToCart('Anker X-2000p turbo Xseries ', 100.95)">Add to Cart</button>
+                </div>
+                 <div class="product-card">
+                    <span class="placeholder-image product-image-placeholder"><img src="vision-pro-removebg-preview.png " width="150" height="150"> </span>
+                    <h3>Apple Vision Pro</h3>
+                    <p>$129.99</p>
+                    <button class="auth-button" style="padding: 10px; font-size: 16px; margin-top: 10px;" onclick="addToCart('Xiaomi Wireless Acefast Turbo ', 129.99)">Add to Cart</button>
+                </div>
+                <div class="product-card">
+                    <span class="placeholder-image product-image-placeholder"><img src="galaxy-book360-removebg-preview.png " width="150" height="150"> </span>
+                    <h3>Samsung Galaxy Notebook 360</h3>
+                    <p>$99.99</p>
+                    <button class="auth-button" style="padding: 10px; font-size: 16px; margin-top: 10px;" onclick="addToCart('Huawei Wireless SuperFast Charger', 99.99)">Add to Cart</button>
+                </div>
+                <div class="product-card">
+                    <span class="placeholder-image product-image-placeholder"><img src="macbookair-removebg-preview.png " width="150" height="150">  </span>
+                    <h3> MacBook Air 13”</h3>
+                    <p>$149.99</p>
+                    <button class="auth-button" style="padding: 10px; font-size: 16px; margin-top: 10px;" onclick="addToCart('Apple Premium Wireless Holder 22.5W ', 149.99)">Add to Cart</button>
+                </div>
+                
+                <div class="product-card">
+                    <span class="placeholder-image product-image-placeholder"><img src="inbook.png " width="150" height="150"> </span>
+                    <h3>Infinix INBOOK X2 GEN11</h3>
+                    <p>$149.99</p>
+                    <button class="auth-button" style="padding: 10px; font-size: 16px; margin-top: 10px;" onclick="addToCart('Belkin UltraCharge Pro 3-in-1 Magnetic Charging Dock', 149.99)">Add to Cart</button>
+                </div>
+                <div class="product-card">
+                    <span class="placeholder-image product-image-placeholder"><img src="meta-glasses-removebg-preview.png " width="150" height="150"> </span>
+                    <h3> Meta ai-glasses Skyler(gen2)</h3>
+                    <p>$99.99</p>
+                    <button class="auth-button" style="padding: 10px; font-size: 16px; margin-top: 10px;" onclick="addToCart('iPhone Air MagSafe Battery', 99.99)">Add to Cart</button>
+                </div>
+                <div class="product-card">
+                    <span class="placeholder-image product-image-placeholder"><img src="projector-removebg-preview.png " width="150" height="150"> </span>
+                    <h3>Samsung Projector The Freestyle</h3>
+                    <p>$49.99</p>
+                    <button class="auth-button" style="padding: 10px; font-size: 16px; margin-top: 10px;" onclick="addToCart('MagSafe Charger (2 m)', 49.99)">Add to Cart</button>
+                </div>
+                <div class="product-card">
+                    <span class="placeholder-image product-image-placeholder"><img src="s-pen-removebg-preview.png " width="150" height="150"> </span>
+                    <h3> Samsung S Pen Pro</h3>
+                    <p>$45.99</p>
+                    <button class="auth-button" style="padding: 10px; font-size: 16px; margin-top: 10px;" onclick="addToCart('Anker MagGo Power Bank (5K, Slim)', 45.99)">Add to Cart</button>
+                </div>
+            </div>
+            <button class="shop-now-button" style="margin-top: 40px;" onclick="navigate('categories')">Back to Categories</button>
+        </div>
+    </div>
+    
+
+
+   
+    <!-- 5. TOP SELLERS PAGE -->
+   
+    <div class="page" id="topsellers">
+        <div class="content-area" style="text-align: center;">
+            <h2 style="font-size: 44px; margin-bottom: 10px;">Discover Excellence</h2>
+            <p style="font-size: 20px; color: #9333ea; margin-bottom: 50px;">Our Best Selling Tech Accessories</p>
+
+            <div class="product-grid">
+                <div class="top-seller-card">
+                    <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                    <span class="placeholder-image product-image-placeholder" style="width: 200px; height: 180px; line-height: 180px;"><img src="s-l1200-removebg-preview.png" width="200" height="180"></span>
+                    <h3 style="font-size: 24px; margin-top: 15px;">Xiaomi Headset 7000x</h3>
+                    <h3 style="font-size: 24px; margin-top: 15px; color:#9333ea; text-align: center;">$129.99</h3>
+                    <hr style="color: #9333ea;">
+                    
+                    <ul>
+                        <li><i class="fas fa-circle"></i>Noice Cancellation</li>
+                        <li><i class="fas fa-circle"></i>Long Battery Life</li>
+                        <li><i class="fas fa-circle"></i>Premium Build</li>
+                        <li><i class="fas fa-circle"></i>Budget Friendly</li>
+                    </ul>
+                    <button class="auth-button" style="padding: 12px; font-size: 16px;" onclick="addToCart('Xiaomi Headset 7000x', 129.99)">Add to cart</button>
+                </div>
+
+                <div class="top-seller-card">
+                    <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                    <span class="placeholder-image product-image-placeholder" style="width: 200px; height: 180px; line-height: 180px;"><img src="Samsung-Galaxy-S25-Ultra-removebg-preview.png" width="200" height="180"> </span>
+                    <h3 style="font-size: 24px; margin-top: 15px;">Samsung S25 ultra</h3>
+                    <h3 style="font-size: 24px; margin-top: 15px; color:#9333ea; text-align: center;">$1499.99</h3>
+                    <hr style="color: #9333ea;">
+                    <ul>
+                        <li><i class="fas fa-circle"></i>Premium Quality</li>
+                        <li><i class="fas fa-circle"></i>Smooth Performance</li>
+                        <li><i class="fas fa-circle"></i>Long Battery Life</li>
+                        <li><i class="fas fa-circle"></i>Crystal Clear Display</li>
+                    </ul>
+                    <button class="auth-button" style="padding: 12px; font-size: 16px;" onclick="addToCart('Samsung S25 Ultra', 1499.99)">Add to cart</button>
+                </div>
+
+                <div class="top-seller-card">
+                    <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i></div>
+                    <span class="placeholder-image product-image-placeholder" style="width: 200px; height: 180px; line-height: 180px;"><img src="amazon-watch-removebg-preview.png" width="200" height="180"></span>
+                    <h3 style="font-size: 24px; margin-top: 15px;">Amazfit Bip 6 </h3>
+                    <h3 style="font-size: 24px; margin-top: 15px; color:#9333ea; text-align: center;">$100.49</h3>
+                    <hr style="color: #9333ea;">
+                    <ul>
+                        <li><i class="fas fa-circle"></i>Fitness Tracking</li>
+                        <li><i class="fas fa-circle"></i>Water Resistant</li>
+                        <li><i class="fas fa-circle"></i>Sleek Design</li>
+                        <li><i class="fas fa-circle"></i>Value for Money</li>
+                    </ul>
+                    <button class="auth-button" style="padding: 12px; font-size: 16px;" onclick="addToCart('Amazfit Bip 6 Smart Watch', 100.49)">Add to cart</button>
+                </div>
+                 
+                <div class="top-seller-card">
+                    <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i></div>
+                    <span class="placeholder-image product-image-placeholder" style="width: 200px; height: 180px; line-height: 180px;"><img src="APPLE-AIRPOD-PRO-2-USB-C-MTJV3.png.webp" width="200" height="180"></span>
+                    <h3 style="font-size: 24px; margin-top: 15px;">Apple Smart pro 3</h3>
+                    <h3 style="font-size: 24px; margin-top: 15px; color:#9333ea; text-align: center;">$79.99</h3>
+                    <hr style="color: #9333ea;">
+                    <ul>
+                        <li><i class="fas fa-circle"></i>Noice Cancellation</li>
+                        <li><i class="fas fa-circle"></i>Long Battery Life</li>
+                        <li><i class="fas fa-circle"></i>Premium Build</li>
+                        <li><i class="fas fa-circle"></i>Budget Friendly</li>
+                    </ul>
+                    <button class="auth-button" style="padding: 12px; font-size: 16px;" onclick="addToCart('Apple Smart pro 3', 79.99)">Add to cart</button>
+                </div>
+
+                <div class="top-seller-card">
+                    <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></i><i class="fas fa-star-half-alt"></i></div>
+                    <span class="placeholder-image product-image-placeholder" style="width: 200px; height: 180px; line-height: 180px;"><img src="inbook.png" width="200" height="180"></span>
+                    <h3 style="font-size: 24px; margin-top: 15px;">Infinix INBOOK X2</h3>
+                    <h3 style="font-size: 24px; margin-top: 15px; color:#9333ea; text-align: center;">$149.99</h3>
+                    <hr style="color: #9333ea;">
+                    <ul>
+                        <li><i class="fas fa-circle"></i>Fitness Tracking</li>
+                        <li><i class="fas fa-circle"></i>Water Resistant</li>
+                        <li><i class="fas fa-circle"></i>Sleek Design</li>
+                        <li><i class="fas fa-circle"></i>Value for Money</li>
+                    </ul>
+                    <button class="auth-button" style="padding: 12px; font-size: 16px;" onclick="addToCart('Infinix INBOOK X2', 149.99)">Add to cart</button>
+                </div>
+
+                <div class="top-seller-card">
+                    <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></i><i class="fas fa-star-half-alt"></i></div>
+                    <span class="placeholder-image product-image-placeholder" style="width: 200px; height: 180px; line-height: 180px;"><img src="iphone-17prooo.png" width="200" height="180"></span>
+                    <h3 style="font-size: 24px; margin-top: 15px;">iPhone 17 pro</h3>
+                    <h3 style="font-size: 24px; margin-top: 15px; color:#9333ea; text-align: center;">$1099.99</h3>
+                    <hr style="color: #9333ea;">
+                    <ul>
+                        <li><i class="fas fa-circle"></i>Fitness Tracking</li>
+                        <li><i class="fas fa-circle"></i>Water Resistant</li>
+                        <li><i class="fas fa-circle"></i>Sleek Design</li>
+                        <li><i class="fas fa-circle"></i>Value for Money</li>
+                    </ul>
+                    <button class="auth-button" style="padding: 12px; font-size: 16px;" onclick="addToCart('iPhone 17 pro', 1099.99)">Add to cart</button>
+                </div>
+
+                <div class="top-seller-card">
+                    <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                    <span class="placeholder-image product-image-placeholder" style="width: 200px; height: 180px; line-height: 180px;"><img src="case11-removebg-preview.png" width="200" height="180"></span>
+                    <h3 style="font-size: 24px; margin-top: 15px;">SnapGuard Halloween Edition</h3>
+                    <h3 style="font-size: 24px; margin-top: 15px; color:#9333ea; text-align: center;">$29.99</h3>
+                    <hr style="color: #9333ea;">
+                    <ul>
+                        <li><i class="fas fa-circle"></i>Fitness Tracking</li>
+                        <li><i class="fas fa-circle"></i>Water Resistant</li>
+                        <li><i class="fas fa-circle"></i>Sleek Design</li>
+                        <li><i class="fas fa-circle"></i>Value for Money</li>
+                    </ul>
+                    <button class="auth-button" style="padding: 12px; font-size: 16px;" onclick="addToCart('SnapGuard Halloween edition', 29.99)">Add to cart</button>
+                </div>
+
+                 <div class="top-seller-card">
+                    <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                    <span class="placeholder-image product-image-placeholder" style="width: 200px; height: 180px; line-height: 180px;"><img src="case8-removebg-preview.png" width="200" height="180"></span>
+                    <h3 style="font-size: 24px; margin-top: 15px;">Baloch Traditional Case</h3>
+                    <h3 style="font-size: 24px; margin-top: 15px; color:#9333ea; text-align: center;">$40.99</h3>
+                    <hr style="color: #9333ea;">
+                    <ul>
+                        <li><i class="fas fa-circle"></i>Fitness Tracking</li>
+                        <li><i class="fas fa-circle"></i>Water Resistant</li>
+                        <li><i class="fas fa-circle"></i>Sleek Design</li>
+                        <li><i class="fas fa-circle"></i>Value for Money</li>
+                    </ul>
+                    <button class="auth-button" style="padding: 12px; font-size: 16px;" onclick="addToCart('Baloch Traditional Case', 40.99)">Add to cart</button>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+
+  
+    <!-- 6. CART PAGE -->
+  
+    <div class="page" id="cart">
+
+        <div class="content-area">
+            <h1 style="text-align: center; font-size: 40px; margin-bottom: 30px;">Your Shopping Cart</h1>
+            <div style="display: flex; justify-content: space-between; gap: 40px;">
+                <div style="flex: 2;">
+                    <h2 style="font-size: 28px; border-bottom: 2px solid #9333ea; padding-bottom: 10px; margin-bottom: 20px;">Items</h2>
+                    <div id="cart-list">
+                        <!-- Cart items will be inserted here by JavaScript -->
+                    </div>
+                </div>
+                <div style="flex: 1;">
+                    <div class="cart-summary">
+                        <h2 style="font-size: 28px; border-bottom: 2px solid #9333ea; padding-bottom: 10px; margin-bottom: 20px;">Summary</h2>
+                        <div class="summary-line"><span>Subtotal:</span><span id="cart-subtotal">$0.00</span></div>
+                        <div class="summary-line"><span>Tax (10%):</span><span>Calculated</span></div>
+                        <div class="summary-line total"><span>Total:</span><span id="cart-total">$0.00</span></div>
+                        <button class="auth-button checkout-button" onclick="navigate('payment')">Proceed to Checkout</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- ============================================== -->
+    <!-- 7. PAYMENT PAGE -->
+    <!-- ============================================== -->
+    <div class="page" id="payment">
+
+   
+        <div class="content-area" style="max-width: 600px; margin: 0 auto;">
+          <h1 style="text-align: center; font-size: 40px; margin-bottom: 30px;">Personal Details</h1>  
+           <div class="payment-form">
+                <h2 style="font-size: 28px; border-bottom: 2px solid #9333ea; padding-bottom: 10px; margin-bottom: 20px;">Secure Payment</h2>
+                <form id="paymentForm">
+                     <div style="display: flex; gap: 20px;">
+                        <div class="input-group" style="flex: 1;">
+                            <input type="text" placeholder="First name " required>
+                        </div>
+                        <div class="input-group" style="flex: 1;">
+                            <input type="text" placeholder="Last name" required>
+                        </div>
+                    </div>
+                     <div class="input-group">
+                        <input type="text" placeholder="Address" required>
+                    </div>
+                    <div class="input-group">
+                        <input type="number" placeholder="Phone" required>
+                    </div>
+                    <div class="input-group">
+                    <input type="email" id="loginEmail" placeholder="Email Address" required>
+                    </div>
+                     <h2 style="font-size: 28px; border-bottom: 2px solid #9333ea; padding-bottom: 10px; margin-bottom: 20px;"> Payment Method</h2>
+                      <button  type="button" class="auth-button" onclick="navigate('payment1')"> Card Payment</button>
+                       
+                      <br>
+                      <h1 style="text-align: center; ">OR</h1>
+                      <br>
+                       <button type="submit" class="auth-button">Cash on Delivery</button>
+                      <br><br>
+                    
+                </form>
+            </div>
+        </div>
+    </div>    
+    
+    <div class="page" id="payment1">
+        <div class="content-area" style="max-width: 600px; margin: 0 auto;">
+            <h1 style="text-align: center; font-size: 40px; margin-bottom: 30px;">Payment Details</h1>
+            <div class="payment-form">
+                <h2 style="font-size: 28px; border-bottom: 2px solid #9333ea; padding-bottom: 10px; margin-bottom: 20px;">Secure Payment</h2>
+                <form id="paymentForm1">
+                    <div class="input-group">
+                        <input type="text" placeholder="Card Number" required>
+                    </div>
+                    <div style="display: flex; gap: 20px;">
+                        <div class="input-group" style="flex: 1;">
+                            <input type="text" placeholder="MM/YY" required>
+                        </div>
+                        <div class="input-group" style="flex: 1;">
+                            <input type="text" placeholder="CVV" required>
+                        </div>
+                    </div>
+                    <div class="input-group">
+                        <input type="text" placeholder="Name on Card" required>
+                    </div>
+                    <div class="summary-line total" style="margin-bottom: 20px;"><span>Amount Due:</span><span id="payment-amount">0.00</span></div>
+                    
+                    <button type="submit" class="auth-button">Pay Now</button>
+                </form>
+            </div>
+        </div>
+
+    </div> 
+
+
+    <!-- ============================================== -->
+    <!-- 8. SEARCH ICON PAGE (Simple search) -->
+    <!-- ============================================== -->
+    <div class="page" id="search">
+        <div class="content-area" style="text-align: center; max-width: 800px; margin: 0 auto;">
+            <h1 style="font-size: 40px; margin-bottom: 40px;">Search Alpha Mobiles</h1>
+            <div class="input-group" style="margin-bottom: 40px;">
+                <input type="text" placeholder="Search for products, categories, or brands..." style="width: 100%; padding: 20px;">
+            </div>
+            <p style="color: #bbb;">Search results will appear here...</p>
+            <div style="margin-top: 30px; border: 1px dashed #333; padding: 30px; border-radius: 8px;">
+                <p>Example Search Results:</p>
+                <p><a onclick="navigate('home')" class="sign-up-link">Premium Headphones (Home Page Item)</a></p>
+                <p><a onclick="navigate('topsellers')" class="sign-up-link">Samsung S25 Ultra (Top Seller)</a></p>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- ============================================== -->
+    <!-- 9. ACCOUNT ICON PAGE (User Info) -->
+    <!-- ============================================== -->
+    <div class="page" id="account">
+        <div class="content-area" style="text-align: center; max-width: 500px; margin: 0 auto;">
+            <h1 style="font-size: 40px; margin-bottom: 40px;">Your Account</h1>
+            <div class="cart-summary" style="text-align: left;">
+                <h2 style="font-size: 28px; border-bottom: 2px solid #9333ea; padding-bottom: 10px; margin-bottom: 20px;">User Information</h2>
+                <div class="account-details">
+                    <div><strong>Name:</strong> <span id="user-name"></span></div>
+                    <div><strong>Email:</strong> <span id="user-email"></span></div>
+                    <div><strong>Shipping Address:</strong> <span id="user-shipping"></span></div>
+                    <div><strong>Phone:</strong> <span id="user-phone"></span></div>
+                </div>
+                <button class="auth-button" style="background-color: #f00; margin-top: 30px;" onclick="isLoggedIn=false; cartItems=[]; navigate('login');">Logout</button>
+            </div>
+        </div>
+    </div>
+
+
+    
+    <!-- GLOBAL FOOTER (Visible on all content pages) -->
+   
+    <div class="footer" id="main-footer" style="display: none;">
+        <div class="footer-left">
+            <span class="logo"><img src="alpha-logo-removebg-preview.png" width="30" height="30"></span>
+            <span>&copy; All Rights Reserved</span>
+        </div>
+        <nav class="footer-nav">
+            <a href="aboutus.txt">About Us</a>
+            <a onclick="alert('Contact details: alphamobiles@gmail.com');">Contact Us</a>
+            <a href="faq.txt">FAQ</a>
+        </nav>
+        <div class="social-icons">
+            <a onclick="alert('watsapp no. 0315-0101015');"><i class="fab fa-whatsapp"></i></a>
+            <a href="https://www.instagram.com/alphamobile32/"><i class="fa-brands fa-instagram"></i></a>
+        </div>
+    </div>
+<script>
+        // State variables
+        let isLoggedIn = false;
+        let currentPage = 'login';
+        let cartItems = [];
+        let userData = {
+            name: 'Taha Zafar',
+            email: 'alphamobiles@gmail.com',
+            shipping: '123 Tech Avenue, Silicon City',
+            phone: '555-0100'
+        };
+
+        // --- Core Navigation Function ---
+        function navigate(pageId) {
+            // Hide all pages
+            document.querySelectorAll('.page, .auth-page').forEach(page => {
+                page.style.display = 'none';
+            });
+
+            // Show the requested page
+            const targetPage = document.getElementById(pageId);
+            if (targetPage) {
+                targetPage.style.display = 'flex';
+                // For content pages, use block/flex for inner container, for auth pages, use flex for auth-page wrapper
+                if (pageId === 'login' || pageId === 'signup') {
+                    document.getElementById(pageId).style.display = 'flex';
+                } else {
+                    document.getElementById(pageId).style.display = 'block'; 
+                }
+                currentPage = pageId;
+                updateNavBar(pageId);
+                // Specific updates for dynamic pages
+                if (pageId === 'cart') updateCartDisplay();
+                if (pageId === 'account') updateAccountDisplay();
+                if (pageId === 'home' || pageId === 'categories' || pageId === 'topsellers' || pageId === 'collection1' || pageId === 'collection2' || pageId === 'collection3' || pageId === 'collection4' || pageId === 'collection5' || pageId === 'collection6' || pageId === 'cart' || pageId === 'payment' || pageId === 'payment1' || pageId === 'account') {
+                    // Show header and footer for content pages
+                    document.getElementById('main-header').style.display = 'flex';
+                    document.getElementById('main-footer').style.display = 'flex';
+                    document.body.style.minHeight = '100vh'; // Reset for full content
+                } else {
+                    // Hide header and footer for login/signup
+                    document.getElementById('main-header').style.display = 'none';
+                    document.getElementById('main-footer').style.display = 'none';
+                    document.body.style.minHeight = 'auto'; // Let content size the body
+                }
+            }
+        }
+
+        // --- UI Update Functions ---
+        function updateNavBar(activeId) {
+            document.querySelectorAll('.navbar a').forEach(link => {
+                link.classList.remove('active');
+            });
+            const link = document.querySelector(`.navbar a[data-page-id='${activeId}']`);
+            if (link) {
+                link.classList.add('active');
+            }
+        }
+
+        // --- Cart Management Functions ---
+        function addToCart(name, price) {
+            cartItems.push({ name: name, price: price, quantity: 1, image: 'product.png' });
+            alert(`Added ${name} to cart!`);
+            updateCartDisplay();
+        }
+
+        function updateCartDisplay() {
+            const cartList = document.getElementById('cart-list');
+            const subtotalElement = document.getElementById('cart-subtotal');
+            const totalElement = document.getElementById('cart-total');
+            
+            cartList.innerHTML = '';
+            let subtotal = 0;
+
+            if (cartItems.length === 0) {
+                cartList.innerHTML = '<p style="text-align: center; margin-top: 30px;">Your cart is empty.</p>';
+            } else {
+                cartItems.forEach((item, index) => {
+                    subtotal += item.price * item.quantity;
+                    const itemElement = document.createElement('div');
+                    itemElement.className = 'cart-item';
+                    itemElement.innerHTML = `
+                        <div class="cart-item-details">
+                            <span class="cart-image-placeholder placeholder-image">IMG</span>
+                            <div>
+                                <h3>${item.name}</h3>
+                                <p style="color: #bbb;">Qty: ${item.quantity} | $${item.price.toFixed(2)} each</p>
+                            </div>
+                        </div>
+                        <div style="font-size: 1.1em; font-weight: bold;">
+                            $${(item.price * item.quantity).toFixed(2)}
+                            <button onclick="removeFromCart(${index})" style="background: none; border: none; color: #f00; margin-left: 15px; cursor: pointer;"><i class="fas fa-trash"></i></button>
+                        </div>
+                    `;
+                    cartList.appendChild(itemElement);
+                });
+            }
+
+            const tax = subtotal * 0.10;
+            const total = subtotal + tax;
+
+            subtotalElement.textContent = `$${subtotal.toFixed(2)}`;
+            totalElement.textContent = `$${total.toFixed(2)}`;
+            
+            // Set payment total
+            document.getElementById('payment-amount').textContent = total.toFixed(2);
+        }
+        
+        function removeFromCart(index) {
+            cartItems.splice(index, 1);
+            updateCartDisplay();
+        }
+
+        // --- Account Page Function ---
+        function updateAccountDisplay() {
+            document.getElementById('user-name').textContent = userData.name;
+            document.getElementById('user-email').textContent = userData.email;
+            document.getElementById('user-shipping').textContent = userData.shipping;
+            document.getElementById('user-phone').textContent = userData.phone;
+        }
+
+        // --- Form Submission Handlers ---
+        function handleLogin(event) {
+            event.preventDefault();
+            const email = document.getElementById('loginEmail').value;
+            const password = document.getElementById('loginPassword').value;
+
+            if (email.includes('@') && password.length >= 6) {
+                isLoggedIn = true;
+                userData.email = email;
+                alert('Login successful! Welcome back.');
+                navigate('home');
+            } else {
+                alert('Login failed. Please enter valid credentials (Email must contain @, Password must be 6+ chars).');
+            }
+        }
+
+        function handleSignup(event) {
+            event.preventDefault();
+            const fullname = document.getElementById('signupFullname').value;
+            const email = document.getElementById('signupEmail').value;
+            const password = document.getElementById('signupPassword').value;
+            const confirmPassword = document.getElementById('confirmPassword').value;
+
+            if (password !== confirmPassword) {
+                alert('Passwords do not match!');
+                return;
+            }
+
+            if (fullname && email.includes('@') && password.length >= 6) {
+                alert('Account created! Please log in.');
+                document.getElementById('loginEmail').value = email;
+                document.getElementById('loginPassword').value = '';
+                navigate('login');
+            } else {
+                alert('Please fill in all fields correctly (Password 6+ chars).');
+            }
+        }
+        
+        function handlePayment(event) {
+            event.preventDefault();
+            alert('Payment Successful! Thank you for your order.');
+            cartItems = []; // Clear cart after payment
+            navigate('home');
+        }
+
+        // Initial setup on load
+        window.onload = function() {
+            navigate('login'); // Start on the Login page
+            // Add event listeners after DOM loads
+            document.getElementById('loginForm').addEventListener('submit', handleLogin);
+            document.getElementById('signupForm').addEventListener('submit', handleSignup);
+            document.getElementById('paymentForm1').addEventListener('submit', handlePayment);
+             document.getElementById('paymentForm').addEventListener('submit', handlePayment);
+        };
+
+       
+    </script>
+</body>
+</html>
